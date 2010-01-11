@@ -2,7 +2,7 @@ package yardspoon.rps;
 
 public enum Throw {
 	Rock("Scissors"),
-	Paper(null),
+	Paper("Rock"),
 	Scissors("Paper");
 	
 	private final String theThrowIBeatAsName;
