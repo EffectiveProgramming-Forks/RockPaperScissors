@@ -1,6 +1,6 @@
 package yardspoon.rps;
 
 public enum Result {
-	Tie, Win
+	Tie, Win, Loss
 
 }
