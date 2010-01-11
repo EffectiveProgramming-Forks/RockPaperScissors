@@ -1,14 +1,22 @@
 package yardspoon.rps;
 
 public enum Throw {
-	Rock, Paper, Scissors;
+	Rock("Scissors"),
+	Paper(null),
+	Scissors("Paper");
+	
+	private final String theThrowIBeatAsName;
+
+	private Throw(String theThrowIBeatAsName) {
+		this.theThrowIBeatAsName = theThrowIBeatAsName;
+	}
 
 	public Result play(Throw opponent) {
 		if(this == opponent) {
 			return Result.Tie;
 		}
 		
-		if(this == Rock && opponent == Scissors || this == Scissors && opponent == Paper) {
+		if(opponent == Throw.valueOf(theThrowIBeatAsName)) {
 			return Result.Win;
 		}
 		
