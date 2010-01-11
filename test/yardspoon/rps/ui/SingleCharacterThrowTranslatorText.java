@@ -13,4 +13,9 @@ public class SingleCharacterThrowTranslatorText {
 	public void rIsConvertedToRock() throws Exception {
 		assertEquals(Throw.Rock, new SingleCharacterThrowTransator().translate("R"));
 	}
+	
+	@Test
+	public void sIsConvertedToScissors() throws Exception {
+		assertEquals(Throw.Scissors, new SingleCharacterThrowTransator().translate("S"));
+	}
 }
