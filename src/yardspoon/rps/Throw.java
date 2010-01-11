@@ -8,7 +8,7 @@ public enum Throw {
 			return Result.Tie;
 		}
 		
-		if(opponent == Scissors) {
+		if(this == Rock && opponent == Scissors || this == Scissors) {
 			return Result.Win;
 		}
 		
