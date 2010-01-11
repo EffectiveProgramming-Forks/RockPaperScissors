@@ -1,2 +1,5 @@
 Need to add simple build script to run tests, produce executable jar, etc
 Also should include instructions on how to compile/build/text in case user does not have any or Eclipse and how to play the game
+
+Add UATs for bad user input (lower and upper case, enter without input, bad letter or string, etc)
+Add UATs for multiple game arguments
