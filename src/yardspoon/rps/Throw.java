@@ -4,7 +4,7 @@ public enum Throw {
 	Rock, Paper, Scissors;
 
 	public Result play(Throw opponent) {
-		return null;
+		return Result.Tie;
 	}
 
 }
