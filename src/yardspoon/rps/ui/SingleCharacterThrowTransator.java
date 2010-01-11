@@ -5,7 +5,11 @@ import yardspoon.rps.game.Throw;
 public class SingleCharacterThrowTransator {
 
 	public Throw translate(String throwAsSingleCharacter) {
-		return Throw.Rock;
+		if("R".equals(throwAsSingleCharacter)) {
+			return Throw.Rock;
+		}
+		
+		return Throw.Scissors;
 	}
 
 }
