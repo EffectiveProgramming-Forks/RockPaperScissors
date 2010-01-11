@@ -8,8 +8,11 @@ public class SingleCharacterThrowTransator {
 		if("R".equals(throwAsSingleCharacter)) {
 			return Throw.Rock;
 		}
+		else if("S".equals(throwAsSingleCharacter)) {
+			return Throw.Scissors;
+		}
 		
-		return Throw.Scissors;
+		return Throw.Paper;
 	}
 
 }
