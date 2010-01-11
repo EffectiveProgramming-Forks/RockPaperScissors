@@ -20,7 +20,12 @@ public class ThrowTest {
 	}
 	
 	@Test
-	public void scissorsLosesToRock() throws Exception {
-		assertEquals(Result.Loss, Throw.Scissors.play(Throw.Rock));
+	public void rockLossesToPaper() throws Exception {
+		assertEquals(Result.Loss, Throw.Rock.play(Throw.Paper));
 	}
+	
+//	@Test
+//	public void scissorsLosesToRock() throws Exception {
+//		assertEquals(Result.Loss, Throw.Scissors.play(Throw.Rock));
+//	}
 }
