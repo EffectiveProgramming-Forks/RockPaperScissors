@@ -1,6 +1,6 @@
 package yardspoon.rps.ui;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -18,4 +18,10 @@ public class SingleCharacterThrowTranslatorText {
 	public void sIsConvertedToScissors() throws Exception {
 		assertEquals(Throw.Scissors, new SingleCharacterThrowTransator().translate("S"));
 	}
+	
+	@Test
+	public void pIsConvertedToPaper() throws Exception {
+		assertEquals(Throw.Paper, new SingleCharacterThrowTransator().translate("P"));
+	}
+
 }
