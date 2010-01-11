@@ -3,3 +3,5 @@ Also should include instructions on how to compile/build/text in case user does 
 
 Add UATs for bad user input (lower and upper case, enter without input, bad letter or string, etc)
 Add UATs for multiple game arguments
+
+** Need to keep coding from top down, don't assume you will need things at the bottom before you have a failing test
