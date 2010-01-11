@@ -28,4 +28,9 @@ public class ThrowTest {
 	public void scissorsBeatsPaper() throws Exception {
 		assertEquals(Result.Win, Throw.Scissors.play(Throw.Paper));
 	}
+
+	@Test
+	public void scissorsLosesToRock() throws Exception {
+		assertEquals(Result.Loss, Throw.Scissors.play(Throw.Rock));
+	}
 }
