@@ -2,7 +2,7 @@ package yardspoon.rps.ui;
 
 import yardspoon.rps.game.Throw;
 
-public class SingleCharacterThrowTransator {
+public class SingleCharacterThrowTransator implements ThrowTranslator {
 
 	public Throw translate(String throwAsSingleCharacter) {
 		if("R".equals(throwAsSingleCharacter)) {

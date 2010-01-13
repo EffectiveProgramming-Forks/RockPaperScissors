@@ -6,19 +6,19 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 
-public class CommandLineInterface {
+public class CommandLineInterface implements UserInterface {
 
-	private final InputStream in;
 	private final PrintStream out;
+	private final BufferedReader in;
 
 	public CommandLineInterface(InputStream in, PrintStream out) {
-		this.in = in;
+		this.in = new BufferedReader(new InputStreamReader(in));
 		this.out = out;
 	}
 
 	public String prompt(String prompt) throws IOException {
 		out.print(prompt);
-		return new BufferedReader(new InputStreamReader(in)).readLine();
+		return in.readLine();
 	}
 
 	public void inform(String information) {

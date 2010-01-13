@@ -1,6 +1,6 @@
 package yardspoon.rps.uats;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -17,7 +17,7 @@ public class SingleGameTest {
 	@Test
 	public void PlayersTie() throws Exception {
 		String input = "Nate\nBen\nR\nR\n";
-		String expectedOutput = "Player 1 Name: \nPlayer 2 Name: \n[R]ock, [P]aper, or [S]cissors? \n[R]ock, [P]aper, or [S]cissors? \nNate & Ben Tie!";
+		String expectedOutput = "Player 1 Name: Player 2 Name: [R]ock, [P]aper, or [S]cissors? [R]ock, [P]aper, or [S]cissors? Players Tie!" + System.getProperty("line.separator");
 		
 		String actualOutput = executeGame(input);
 
@@ -27,7 +27,7 @@ public class SingleGameTest {
 	@Test
 	public void FirstPlayerWins() throws Exception {
 		String input = "Nate\nBen\nR\nS\n";
-		String expectedOutput = "Player 1 Name: \nPlayer 2 Name: \n[R]ock, [P]aper, or [S]cissors? \n[R]ock, [P]aper, or [S]cissors? \nNate Wins!";
+		String expectedOutput = "Player 1 Name: Player 2 Name: [R]ock, [P]aper, or [S]cissors? [R]ock, [P]aper, or [S]cissors? Nate Wins!" + System.getProperty("line.separator");
 		
 		String actualOutput = executeGame(input);
 		
@@ -37,7 +37,7 @@ public class SingleGameTest {
 	@Test
 	public void SecondPlayerWins() throws Exception {
 		String input = "Amos\nKenny\nP\nS\n";
-		String expectedOutput = "Player 1 Name: \nPlayer 2 Name: \n[R]ock, [P]aper, or [S]cissors? \n[R]ock, [P]aper, or [S]cissors? \nKenny Wins!";
+		String expectedOutput = "Player 1 Name: Player 2 Name: [R]ock, [P]aper, or [S]cissors? [R]ock, [P]aper, or [S]cissors? Kenny Wins!" + System.getProperty("line.separator");
 		
 		String actualOutput = executeGame(input);
 		

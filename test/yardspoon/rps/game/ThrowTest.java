@@ -4,9 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import yardspoon.rps.game.Result;
-import yardspoon.rps.game.Throw;
-
 public class ThrowTest {
 
 	@Test

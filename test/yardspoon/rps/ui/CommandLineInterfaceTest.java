@@ -1,16 +1,17 @@
 package yardspoon.rps.ui;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.io.PrintStream;
 
 import org.junit.Test;
 
-
 public class CommandLineInterfaceTest {
-
+	
 	@Test
 	public void promptPushesStringToOutputAndReturnsNextLineFromInput() throws Exception {
 		String expectedText = "dog";
@@ -21,7 +22,7 @@ public class CommandLineInterfaceTest {
 		PrintStream outputPrintStream = new PrintStream(outputStream);
 		ByteArrayInputStream inputStream = new ByteArrayInputStream(input.getBytes());
 
-		CommandLineInterface testObject = new CommandLineInterface(inputStream, outputPrintStream);
+		UserInterface testObject = new CommandLineInterface(inputStream, outputPrintStream);
 		String actualText = testObject.prompt(prompt);
 		
 		String actualPrompt = outputStream.toString();
@@ -32,17 +33,17 @@ public class CommandLineInterfaceTest {
 	
 	@Test
 	public void informPushesStringToOutput() throws Exception {
-		String information = "Something happened!";
+		String text = "Something happened!";
 		
 		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 		PrintStream outputPrintStream = new PrintStream(outputStream);
 
-		CommandLineInterface testObject = new CommandLineInterface(null, outputPrintStream);
-		testObject.inform(information);
+		UserInterface testObject = new CommandLineInterface(mock(InputStream.class), outputPrintStream);
+		testObject.inform(text);
 		
 		String actualInformation = outputStream.toString();
 		
-		assertEquals(information + System.getProperty("line.separator"), actualInformation);
+		assertEquals(text + System.getProperty("line.separator"), actualInformation);
 	}
 	
 }

@@ -2,7 +2,7 @@ package yardspoon.rps.ui;
 
 import yardspoon.rps.game.Result;
 
-public class CommandLineUserInterfaceModifier {
+public class CommandLineUserInterfaceModifier implements InterfaceModifier {
 
 	public String getPlayer1NamePrompt() {
 		return "Player 1 Name: ";
