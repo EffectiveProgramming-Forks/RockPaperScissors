@@ -59,6 +59,8 @@ public class MultiGameTest {
 		assertEquals(expectedOutput, actualOutput);
 	}
 	
+	// TODO Add test for ties
+	
 	private String executeGame(String input, String... arguments) throws IOException {
 		PrintStream originalOutputStream = System.out;
 		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
