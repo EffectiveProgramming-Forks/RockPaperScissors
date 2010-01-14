@@ -20,13 +20,16 @@ public class MultiGameTest {
 								"Player 2 Name: " +
 								"[R]ock, [P]aper, or [S]cissors? " +
 								"[R]ock, [P]aper, or [S]cissors? " +
-								"Kenny Wins! (0-1)" + System.getProperty("line.separator") +
+								"Kenny Wins!" + System.getProperty("line.separator") +
+								"Record So Far: Amos-Kenny 0-1" + System.getProperty("line.separator") +
 								"[R]ock, [P]aper, or [S]cissors? " +
 								"[R]ock, [P]aper, or [S]cissors? " +
-								"Kenny Wins! (0-2)" + System.getProperty("line.separator") +
+								"Kenny Wins!" + System.getProperty("line.separator") +
+								"Record So Far: Amos-Kenny 0-2" + System.getProperty("line.separator") +
 								"[R]ock, [P]aper, or [S]cissors? " +
 								"[R]ock, [P]aper, or [S]cissors? " +
-								"Kenny Wins! (0-3)" + System.getProperty("line.separator");
+								"Kenny Wins!" + System.getProperty("line.separator") +
+								"Record So Far: Amos-Kenny 0-3" + System.getProperty("line.separator");
 		
 		String actualOutput = executeGame(input, "-to", "3");
 		
@@ -40,13 +43,16 @@ public class MultiGameTest {
 								"Player 2 Name: " +
 								"[R]ock, [P]aper, or [S]cissors? " +
 								"[R]ock, [P]aper, or [S]cissors? " +
-								"Amos Wins! (1-0)" + System.getProperty("line.separator") +
+								"Amos Wins!" + System.getProperty("line.separator") +
+								"Record So Far: Amos-Kenny 1-0" + System.getProperty("line.separator") +
 								"[R]ock, [P]aper, or [S]cissors? " +
 								"[R]ock, [P]aper, or [S]cissors? " +
 								"Kenny Wins! (1-1)" + System.getProperty("line.separator") +
+								"Record So Far: Amos-Kenny 1-1" + System.getProperty("line.separator") +
 								"[R]ock, [P]aper, or [S]cissors? " +
 								"[R]ock, [P]aper, or [S]cissors? " +
-								"Amos Wins! (2-1)" + System.getProperty("line.separator");
+								"Amos Wins! (2-1)" + System.getProperty("line.separator") + 
+								"Amos Wins Overall! Amos-Kenny 2-1" + System.getProperty("line.separator");
 		
 		String actualOutput = executeGame(input, "-to", "2");
 		
