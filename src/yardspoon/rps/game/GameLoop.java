@@ -13,10 +13,13 @@ public class GameLoop {
 		
 		String player1Name = userInterface.prompt(interfaceModifier.getPlayer1NamePrompt());
 		String player2Name = userInterface.prompt(interfaceModifier.getPlayer2NamePrompt());
+		
 		String player1ThrowName = userInterface.prompt(interfaceModifier.getThrowPrompt());
 		String player2ThrowName = userInterface.prompt(interfaceModifier.getThrowPrompt());
+		
 		Throw player1Throw = throwTranslator.translate(player1ThrowName);
 		Throw player2Throw = throwTranslator.translate(player2ThrowName);
+		
 		userInterface.inform(interfaceModifier.getOutcome(player1Name, player2Name, player1Throw.play(player2Throw)));
 	}
 
