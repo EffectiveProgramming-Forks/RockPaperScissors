@@ -20,7 +20,7 @@ public class FirstToXMultiGameContinuation implements MultiGameContinuation {
 		}
 	}
 
-	public Boolean stopPlaying() {
+	public Boolean shouldStopPlaying() {
 		return 	numberOfPlayerOneWins == goalNumberOfWins || 
 			   	numberOfPlayerTwoWins == goalNumberOfWins;
 	}
@@ -28,11 +28,15 @@ public class FirstToXMultiGameContinuation implements MultiGameContinuation {
 	public String report() {
 		String report = "Record: " + numberOfPlayerOneWins + "-" + numberOfPlayerTwoWins;
 		
-		if(stopPlaying()) {
+		if(shouldStopPlaying()) {
 			report = "Final " + report;
 		}
 		
 		return report;
+	}
+
+	public Boolean shouldReportStatus() {
+		return true;
 	}
 
 }

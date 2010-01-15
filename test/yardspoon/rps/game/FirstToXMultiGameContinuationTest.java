@@ -10,13 +10,18 @@ import yardspoon.rps.game.Result;
 
 
 public class FirstToXMultiGameContinuationTest {
+	
+	@Test
+	public void shouldReportStatus() throws Exception {
+		assertTrue(new FirstToXMultiGameContinuation(74).shouldReportStatus());
+	}
 
 	@Test
 	public void firstToOneFinishesWithASingleResult() throws Exception {
 		MultiGameContinuation firstToOne = new FirstToXMultiGameContinuation(1);
 		firstToOne.addPlayerOneResult(Result.Win);
 		
-		assertTrue(firstToOne.stopPlaying());
+		assertTrue(firstToOne.shouldStopPlaying());
 	}
 	
 	@Test
@@ -24,7 +29,7 @@ public class FirstToXMultiGameContinuationTest {
 		MultiGameContinuation firstToX = new FirstToXMultiGameContinuation(2);
 		firstToX.addPlayerOneResult(Result.Win);
 		
-		assertFalse(firstToX.stopPlaying());
+		assertFalse(firstToX.shouldStopPlaying());
 	}
 	
 	@Test
@@ -32,17 +37,17 @@ public class FirstToXMultiGameContinuationTest {
 		MultiGameContinuation firstToThree = new FirstToXMultiGameContinuation(3);
 		
 		firstToThree.addPlayerOneResult(Result.Win);
-		assertFalse(firstToThree.stopPlaying());
+		assertFalse(firstToThree.shouldStopPlaying());
 		firstToThree.addPlayerOneResult(Result.Win);
-		assertFalse(firstToThree.stopPlaying());
+		assertFalse(firstToThree.shouldStopPlaying());
 		
 		firstToThree.addPlayerOneResult(Result.Loss);
-		assertFalse(firstToThree.stopPlaying());
+		assertFalse(firstToThree.shouldStopPlaying());
 		firstToThree.addPlayerOneResult(Result.Loss);
-		assertFalse(firstToThree.stopPlaying());
+		assertFalse(firstToThree.shouldStopPlaying());
 
 		firstToThree.addPlayerOneResult(Result.Win);
-		assertTrue(firstToThree.stopPlaying());
+		assertTrue(firstToThree.shouldStopPlaying());
 	}
 	
 	@Test
@@ -50,17 +55,17 @@ public class FirstToXMultiGameContinuationTest {
 		MultiGameContinuation firstToThree = new FirstToXMultiGameContinuation(3);
 		
 		firstToThree.addPlayerOneResult(Result.Win);
-		assertFalse(firstToThree.stopPlaying());
+		assertFalse(firstToThree.shouldStopPlaying());
 		firstToThree.addPlayerOneResult(Result.Win);
-		assertFalse(firstToThree.stopPlaying());
+		assertFalse(firstToThree.shouldStopPlaying());
 		
 		firstToThree.addPlayerOneResult(Result.Loss);
-		assertFalse(firstToThree.stopPlaying());
+		assertFalse(firstToThree.shouldStopPlaying());
 		firstToThree.addPlayerOneResult(Result.Loss);
-		assertFalse(firstToThree.stopPlaying());
+		assertFalse(firstToThree.shouldStopPlaying());
 		
 		firstToThree.addPlayerOneResult(Result.Loss);
-		assertTrue(firstToThree.stopPlaying());
+		assertTrue(firstToThree.shouldStopPlaying());
 	}
 	
 	@Test
@@ -68,23 +73,23 @@ public class FirstToXMultiGameContinuationTest {
 		MultiGameContinuation firstToThree = new FirstToXMultiGameContinuation(3);
 		
 		firstToThree.addPlayerOneResult(Result.Win);
-		assertFalse(firstToThree.stopPlaying());
+		assertFalse(firstToThree.shouldStopPlaying());
 		firstToThree.addPlayerOneResult(Result.Win);
-		assertFalse(firstToThree.stopPlaying());
+		assertFalse(firstToThree.shouldStopPlaying());
 
 		firstToThree.addPlayerOneResult(Result.Tie);
-		assertFalse(firstToThree.stopPlaying());
+		assertFalse(firstToThree.shouldStopPlaying());
 		
 		firstToThree.addPlayerOneResult(Result.Loss);
-		assertFalse(firstToThree.stopPlaying());
+		assertFalse(firstToThree.shouldStopPlaying());
 		firstToThree.addPlayerOneResult(Result.Loss);
-		assertFalse(firstToThree.stopPlaying());
+		assertFalse(firstToThree.shouldStopPlaying());
 
 		firstToThree.addPlayerOneResult(Result.Tie);
-		assertFalse(firstToThree.stopPlaying());
+		assertFalse(firstToThree.shouldStopPlaying());
 		
 		firstToThree.addPlayerOneResult(Result.Loss);
-		assertTrue(firstToThree.stopPlaying());
+		assertTrue(firstToThree.shouldStopPlaying());
 	}
 	
 	@Test

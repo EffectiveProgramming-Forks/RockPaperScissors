@@ -41,7 +41,7 @@ public class GameLoopTest {
 		when(mockThrowTranslator.translate(player2Throw)).thenReturn(Throw.Scissors);
 		
 		GameLoop loop = new GameLoop();
-		loop.play(mockUserInterface, mockInterfaceModifier, mockThrowTranslator);
+		loop.play(mockUserInterface, mockInterfaceModifier, mockThrowTranslator, new NullMultiGameContinuation());
 		
 		verify(mockUserInterface).prompt(player1Prompt);
 		verify(mockUserInterface).prompt(player2Prompt);
@@ -79,8 +79,9 @@ public class GameLoopTest {
 		when(mockThrowTranslator.translate(player2Throw)).thenReturn(Throw.Scissors);
 		
 		MultiGameContinuation mockMultiGameContinuation = mock(MultiGameContinuation.class);
-		when(mockMultiGameContinuation.stopPlaying()).thenReturn(false, true);
+		when(mockMultiGameContinuation.shouldStopPlaying()).thenReturn(false, true);
 		when(mockMultiGameContinuation.report()).thenReturn(firstRecord, finalRecord);
+		when(mockMultiGameContinuation.shouldReportStatus()).thenReturn(true);
 		
 		GameLoop loop = new GameLoop();
 		loop.play(mockUserInterface, mockInterfaceModifier, mockThrowTranslator, mockMultiGameContinuation);
