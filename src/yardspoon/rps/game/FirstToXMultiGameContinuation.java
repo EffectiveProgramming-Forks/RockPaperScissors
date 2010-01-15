@@ -1,6 +1,5 @@
-package yardspoon.rps.ui;
+package yardspoon.rps.game;
 
-import yardspoon.rps.game.Result;
 
 public class FirstToXMultiGameContinuation implements MultiGameContinuation {
 

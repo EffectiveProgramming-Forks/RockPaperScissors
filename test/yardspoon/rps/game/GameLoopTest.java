@@ -8,7 +8,6 @@ import static org.mockito.Mockito.when;
 import org.junit.Test;
 
 import yardspoon.rps.ui.InterfaceModifier;
-import yardspoon.rps.ui.MultiGameContinuation;
 import yardspoon.rps.ui.ThrowTranslator;
 import yardspoon.rps.ui.UserInterface;
 

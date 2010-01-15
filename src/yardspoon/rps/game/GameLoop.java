@@ -3,7 +3,6 @@ package yardspoon.rps.game;
 import java.io.IOException;
 
 import yardspoon.rps.ui.InterfaceModifier;
-import yardspoon.rps.ui.MultiGameContinuation;
 import yardspoon.rps.ui.ThrowTranslator;
 import yardspoon.rps.ui.UserInterface;
 

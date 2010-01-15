@@ -1,9 +1,11 @@
-package yardspoon.rps.ui;
+package yardspoon.rps.game;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import yardspoon.rps.game.FirstToXMultiGameContinuation;
+import yardspoon.rps.game.MultiGameContinuation;
 import yardspoon.rps.game.Result;
 
 
