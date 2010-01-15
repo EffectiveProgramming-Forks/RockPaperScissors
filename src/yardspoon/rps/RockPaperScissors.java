@@ -21,7 +21,7 @@ public class RockPaperScissors {
 		ThrowTranslator throwTranslator = new SingleCharacterThrowTransator();
 		MultiGameCommandLineArgumentsParser multiGameCommandLineArgumentsParser = new MultiGameCommandLineArgumentsParser();
 		
-		MultiGameContinuation gameContinuation = multiGameCommandLineArgumentsParser.parseArguments(args);
+		MultiGameContinuation gameContinuation = multiGameCommandLineArgumentsParser.parse(args);
 		
 		new GameLoop().play(userInterface, interfaceModifier, throwTranslator, gameContinuation);
 	}
